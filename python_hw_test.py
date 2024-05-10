@@ -13,6 +13,7 @@ def test_greeting():
 
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
+    print(output)
 
 
 def test_rectangle():
@@ -48,6 +49,8 @@ def test_circle():
     length = 2 * pi * r
 
     assert length == 144.51326206513048
+    print(f'Площадь  = {area}')
+    print(f'Длина окружности = {length}')
 
 
 def test_random_list():
@@ -55,7 +58,7 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 (включая обе границы) и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    l = sorted([random.randint(0, 101) for _ in range(10)])
+    l = sorted([random.randint(1, 100) for _ in range(10)])
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
