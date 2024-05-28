@@ -72,9 +72,6 @@ def test_find_suitable_user():
     ]
 
 
-test_find_suitable_user()
-
-
 def print_readable_function(func, *args):
     func_name = func.__name__.replace('_', ' ').title()
     args_str = ', '.join(str(arg) for arg in args)
@@ -84,9 +81,9 @@ def print_readable_function(func, *args):
 
 
 def test_readable_function():
-    print_readable_function(open_browser, "Chrome")
-    print_readable_function(go_to_companyname_homepage, "https://companyname.com")
-    print_readable_function(find_registration_button_on_login_page, "https://companyname.com/login", "Register")
+    open_browser(browser_name="Chrome")
+    go_to_companyname_homepage(page_url="https://companyname.com")
+    find_registration_button_on_login_page(page_url="https://companyname.com/login", button_text="Register")
 
 
 def open_browser(browser_name):
